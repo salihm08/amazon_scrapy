@@ -20,19 +20,23 @@ class Amazon1Spider(scrapy.Spider):
 
     def parse_product(self,response):
     	PNME = "//span[@id='productTitle']/text()"
-    	pnme = response.xpath(PNME).extract()
+    	pnme = response.xpath(PNME).extract_first()
     	pnme = [a.strip() for a in pnme]
     	pnme = "".join(pnme)
     	DESCP = "//div[@id='feature-bullets']/ul/li/span/text()"
-    	descp = response.xpath(DESCP).extract()
+    	descp = response.xpath(DESCP).extract_first()
     	descp = [a.strip() for a in descp]
     	descp = "".join(descp)
     	PRICE = "//span[@id='priceblock_ourprice']/text()"
-    	price = response.xpath(PRICE).extract()
+    	price = response.xpath(PRICE).extract_first()
     	price = [a.strip() for a in price]
     	price = "".join(price)
     	IMG = "//img[@id='landingImage']//@src"
-    	img = response.xpath(IMG).extract()
+    	img = response.xpath(IMG).extract_first()
     	img = [a.strip() for a in img]
     	img = "".join(img)
+    	RATING = "//span[@class='a-icon-alt']/text()"
+    	rating = respose.xpath(RATING).extract_first()
+    	rating = [a.strip() for a in rating]
+    	rating = "".join(rating)
     	yield AmazonItem(pnme=pnme,descp=descp,price=price,img=img)
