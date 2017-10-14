@@ -36,7 +36,7 @@ class Amazon1Spider(scrapy.Spider):
     	img = [a.strip() for a in img]
     	img = "".join(img)
     	RATING = "//span[@class='a-icon-alt']/text()"
-    	rating = respose.xpath(RATING).extract_first()
+    	rating = response.xpath(RATING).extract_first()
     	rating = [a.strip() for a in rating]
-    	rating = "".join(rating)
-    	yield AmazonItem(pnme=pnme,descp=descp,price=price,img=img)
+    	rating = "".join(rating)	
+    	yield AmazonItem(pnme=pnme,descp=descp,price=price,img=img,rating=rating)

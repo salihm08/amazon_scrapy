@@ -13,3 +13,4 @@ class AmazonItem(scrapy.Item):
     descp = scrapy.Field()
     price = scrapy.Field()
     img = scrapy.Field()
+    rating = scrapy.Field()
