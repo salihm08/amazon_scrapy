@@ -29,6 +29,10 @@ class Amazon1Spider(scrapy.Spider):
     	descp = "".join(descp)
     	PRICE = "//span[@id='priceblock_ourprice']/text()"
     	price = response.xpath(PRICE).extract()
+    	price = [a.strip() for a in price]
+    	price = "".join(price)
     	IMG = "//img[@id='landingImage']//@src"
     	img = response.xpath(IMG).extract()
+    	img = [a.strip() for a in img]
+    	img = "".join(img)
     	yield AmazonItem(pnme=pnme,descp=descp,price=price,img=img)
