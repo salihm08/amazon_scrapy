@@ -169,8 +169,9 @@ USER_AGENT_LIST = ["Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) li
 	"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML like Gecko) Chrome/28.0.1500.72 Safari/537.36",
 	"Mozilla/5.0 (compatible; proximic; +http://www.proximic.com/info/spider.php)",
 	"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/33.0.1750.146 Safari/537.36",
-	"Mozilla/5.0 (Windows NT 6.1; rv:23.0) Gecko/20100101 Firefox/23.0"] #myip.ms
+	"Mozilla/5.0 (Windows NT 6.1; rv:23.0) Gecko/20100101 Firefox/23.0"] 
 
+# User_agents were taken from https://myip.ms
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
