@@ -18,7 +18,7 @@ class AmazonSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
     
     def process_request(self,request,spider):
-        u_agent = random.choice(settings.get("USER_AGENT_LIST'))
+        u_agent = random.choice(settings.get('USER_AGENT_LIST'))
         if u_agent:
             request.headers['User-Agent']=u_agent
         
